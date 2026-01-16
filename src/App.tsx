@@ -1,10 +1,11 @@
-function App() {
+import { Header } from "./components/Header";
 
+function App() {
   return (
     <>
-      <p className="bg-primary font-medium">Hello World</p>
+      <Header />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
