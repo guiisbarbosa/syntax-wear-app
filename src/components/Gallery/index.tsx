@@ -6,6 +6,7 @@ import galeriaModelo from "@/assets/images/galeria-modelo.jpg";
 import galeriaTenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisBrancoPreto from "@/assets/images/galeria-tenis-branco-e-preto.jpg";
 import galeriaTenisCinza from "@/assets/images/galeria-tenis-cinza.jpg";
+import { Overlay } from "../Overlay";
 
 export const Gallery = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -67,24 +68,14 @@ export const Gallery = () => {
             alt="Modelo masculino"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/20 opacity-0 hover:opacity-100 transition-opacity transition-duration-300">
-            <div className="text-center">
-              <p className="text-sm font-medium text-white tracking-widest mb-2">
-                Krypton One
-              </p>
-              <h3 className="text-2xl font-medium text-white leading-tight mb-2">
-                Estilo urbano com atitude
-              </h3>
-            </div>
-            <div className="flex gap-3">
-              <Button variant="secondary" size="md">
-                Feminino
-              </Button>
-              <Button variant="secondary" size="md">
-                Masculino
-              </Button>
-            </div>
-          </div>
+          <Overlay
+            title="Krypton One"
+            subtitle="Estilo urbano com atitude"
+            className=" inset-0 justify-center"
+          >
+            <Button variant="secondary">Feminino</Button>
+            <Button variant="secondary">Masculino</Button>
+          </Overlay>
         </div>
 
         {/* Desktop: Sneaker Purple - Tenis roxo */}
