@@ -11,9 +11,9 @@ export interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { name: "Masculino", href: "/products" },
-  { name: "Feminino", href: "/products" },
-  { name: "Outlet", href: "/products" },
+  { name: "Masculino", href: "/products/category/masculino" },
+  { name: "Feminino", href: "/products/category/feminino" },
+  { name: "Outlet", href: "/products/category/outlet" },
 ];
 
 export const Header = () => {
@@ -29,7 +29,9 @@ export const Header = () => {
             <ul className="flex gap-10">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href}>{link.name}</Link>
+                  <Link to={link.href} preloadDelay={-1}>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -44,7 +46,7 @@ export const Header = () => {
                 <Link to="/about">Sobre</Link>
               </li>
               <li className="lg:hidden">
-                <MenuMobile navLinks={navLinks}/>
+                <MenuMobile navLinks={navLinks} />
               </li>
               <li className="hidden lg:block">
                 <Link to="/sign-in">

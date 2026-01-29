@@ -23,7 +23,7 @@ export const Categories = () => {
           <div className="absolute inset-0 bg-black/30"></div>
 
           <div className="relative">
-            <Button variant="secondary">Ver mais</Button>
+            <Button variant="secondary">{category.name}</Button>
           </div>
         </div>
       ))}

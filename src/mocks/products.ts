@@ -18,6 +18,7 @@ export const products = [
     color: "Natural Black/Royal blue",
     description:
       "Tênis de performance feito em tecido respirável de fibra de árvore, com ótimo amortecimento e suporte. Ideal para treinos e uso diário, oferecendo conforto e estilo moderno.",
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ export const products = [
     color: "Weathered Brown",
     description:
       "Tênis leve e confortável produzido com tecido natural de eucalipto. Possui maciez no toque, respirabilidade e design versátil para acompanhar qualquer look casual.",
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ export const products = [
     color: "Burgundy",
     description:
       "Sapato feito com lã merino macia que mantém os pés aquecidos e confortáveis. Estiloso, resistente e perfeito para dias frios sem abrir mão do visual moderno.",
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const products = [
     color: "Dark Grey",
     description:
       "Modelo slip-on em lã merino, fácil de calçar e extremamente confortável. Ideal para quem busca praticidade, estilo discreto e aquecimento natural.",
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 5,
@@ -54,6 +58,7 @@ export const products = [
     color: "Natural Black",
     description:
       "Versão impermeável do Wool Cruiser, feita com lã merino tratada. Mantém os pés secos e aquecidos mesmo em dias chuvosos, sem perder o conforto e o estilo.",
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 6,
@@ -63,6 +68,7 @@ export const products = [
     color: "Medium Grey",
     description:
       "Tênis resistente à água, feito em lã merino com ajuste confortável e respirável. Perfeito para quem busca proteção e estilo em qualquer clima.",
+    category: { id: 5, name: "Moderno" },
   },
   {
     id: 7,
@@ -72,6 +78,7 @@ export const products = [
     color: "Natural Black",
     description:
       "Modelo de cano médio em lã merino, impermeável e elegante. Oferece estabilidade extra, conforto térmico e proteção ideal para dias frios e úmidos.",
+    category: { id: 5, name: "Moderno" },
   },
   {
     id: 8,
@@ -81,6 +88,7 @@ export const products = [
     color: "Rustic Green",
     description:
       "Tênis robusto e moderno, feito para aventuras urbanas e ao ar livre. Combina resistência, conforto e design em um só produto versátil.",
+    category: { id: 5, name: "Moderno" },
   },
   {
     id: 9,
@@ -90,6 +98,7 @@ export const products = [
     color: "Rustic Green",
     description:
       "Sapato de cano médio com acabamento resistente e estilo aventureiro. Proporciona conforto prolongado e segurança em diferentes tipos de terreno.",
+    category: { id: 3, name: "Outlet" },
   },
   {
     id: 10,
@@ -99,5 +108,6 @@ export const products = [
     color: "Blizzard",
     description:
       "Clássico e elegante, o Cruiser é feito em materiais premium que garantem conforto e durabilidade. Uma escolha versátil para qualquer ocasião.",
+    category: { id: 3, name: "Outlet" },
   },
 ];

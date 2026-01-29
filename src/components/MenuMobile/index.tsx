@@ -45,7 +45,11 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
           <ul className="p-4 overflow-y-auto scrollbar-hide h-[calc(100%-140px)] flex flex-col gap-3">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link to={link.href} onClick={() => setMenuIsOpen(!menuIsOpen)}>
+                <Link
+                  to={link.href}
+                  preloadDelay={-1}
+                  onClick={() => setMenuIsOpen(!menuIsOpen)}
+                >
                   {link.name}
                 </Link>
               </li>
