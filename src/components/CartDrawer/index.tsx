@@ -1,12 +1,13 @@
-import IconCart from "@/assets/images/icon-cart.png";
-import { useContext, useState } from "react";
-
-import { formatCurrency } from "../../utils/format-currency";
+import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { formatCurrency } from "../../utils/format-currency";
 
-export const ShoppingCart = () => {
-  const [cartIsOpen, setCartisOpen] = useState(false);
+interface CartDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
+export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
   const { cart, removeFromCart, incrementInCart, decrementInCart } =
     useContext(CartContext);
 
@@ -17,32 +18,17 @@ export const ShoppingCart = () => {
 
   return (
     <>
-      <button
-        className="cursor-pointer relative"
-        onClick={() => setCartisOpen(!cartIsOpen)}
-      >
-        <img src={IconCart} alt="Ícone carrinho de compras" />
-        {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-error text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-            {totalItems}
-          </span>
-        )}
-      </button>
-
       <div
-        className={`${cartIsOpen ? "bg-black/60 visible" : "transparent invisible"} fixed top-0 bottom-0 left-0 right-0`}
-        onClick={() => setCartisOpen(false)}
+        className={`${isOpen ? "bg-black/60 visible" : "transparent invisible"} fixed top-0 bottom-0 left-0 right-0 text-black z-10`}
+        onClick={onClose}
       >
         <div
-          className={`${cartIsOpen ? "translate-x-0" : "translate-x-full"} absolute top-0 right-0 bottom-0 pt-6 transition-all duration-500 ease-in-out w-75 md:w-106 bg-white`}
+          className={`${isOpen ? "translate-x-0" : "translate-x-full"} absolute top-0 right-0 bottom-0 pt-6 transition-all duration-500 ease-in-out w-75 md:w-106 bg-white`}
           onClick={(e) => e.stopPropagation()}
         >
-          <header className="flex items-center justify-between px-5">
+          <header className="flex items-center justify-between px-5 ">
             <p className="text-2xl font-bold">Carrinho ({totalItems})</p>
-            <button
-              className="text-xl cursor-pointer"
-              onClick={() => setCartisOpen(false)}
-            >
+            <button className="text-xl cursor-pointer" onClick={onClose}>
               X
             </button>
           </header>
