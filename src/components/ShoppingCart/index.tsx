@@ -23,7 +23,7 @@ export const ShoppingCart = () => {
       >
         <img src={IconCart} alt="Ícone carrinho de compras" />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+          <span className="absolute -top-2 -right-2 bg-error text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
             {totalItems}
           </span>
         )}

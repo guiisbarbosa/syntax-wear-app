@@ -20,16 +20,23 @@ function RouteComponent() {
       </div>
 
       <div className="text-black px-8 py-16 lg:px-20 md:w-1/2 h-full flex flex-col justify-center gap-4">
-        <h2 className="text-5xl lg:text-6xl font-medium text-[#333333]">Sobre nós</h2>
+        <h2 className="text-5xl lg:text-6xl font-medium text-text">
+          Sobre nós
+        </h2>
 
-        <p className="text-[#666666] text-lg leading-relaxed">
+        <p className="text-text-secondary text-lg leading-relaxed">
           Somos apaixonados por calçados que unem estilo conforto e
           durabilidade. Nossa missão? Fazer você sentir bem a cada passo,
           oferecendo uma experiência de compra incrível e uma seleção de tênis,
           botas e sapatos para todas as ocasiões.
         </p>
 
-        <Link to="/our-stores" className="text-xs font-bold text-[#333333] uppercase border-b-2 tracking-[2.5px] hover:text-accent self-start">Saiba mais sobre nossas lojas</Link>
+        <Link
+          to="/our-stores"
+          className="text-xs font-bold text-text uppercase border-b-2 tracking-[2.5px] hover:text-accent self-start"
+        >
+          Saiba mais sobre nossas lojas
+        </Link>
       </div>
     </section>
   );

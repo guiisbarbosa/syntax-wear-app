@@ -20,26 +20,27 @@ export const CEPForm = () => {
     setAddressError(null);
     setAddress(null);
 
-
     try {
-    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const data = await response.json();
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
 
-    if (data.erro) {
-      setAddressError("CEP não encontrado");
-      return;
+      if (data.erro) {
+        setAddressError("CEP não encontrado");
+        return;
+      }
+      const shippingCost = SHIPPING_BY_REGION[data.regiao];
+
+      if (!shippingCost) {
+        setAddressError("Região não suportada para entrega");
+        return;
+      }
+
+      setAddress({ ...data, shippingCost: shippingCost });
+    } catch {
+      setAddressError(
+        "Ocorreu um erro ao buscar o CEP. Tente novamente mais tarde.",
+      );
     }
-    const shippingCost = SHIPPING_BY_REGION[data.regiao];
-
-    if (!shippingCost) {
-      setAddressError("Região não suportada para entrega");
-      return;
-    }
-
-    setAddress({ ...data, shippingCost: shippingCost });} catch {
-      setAddressError("Ocorreu um erro ao buscar o CEP. Tente novamente mais tarde.")
-    }
-
   };
 
   return (
@@ -56,18 +57,18 @@ export const CEPForm = () => {
               placeholder="Insira seu CEP"
               {...register("cep")}
               className={`w-full border rounded-md p-3 ${
-                errors.cep ? "border-red-500" : "border-[#c0c0c0]"
+                errors.cep ? "border-error" : "border-[#c0c0c0]"
               }`}
             />
             {errors.cep && (
-              <p className="text-red-500 text-sm mt-1">{errors.cep.message}</p>
+              <p className="text-error text-sm mt-1">{errors.cep.message}</p>
             )}
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-black text-white py-3 px-6 rounded-md cursor-pointer hover:bg-gray-800 disabled:bg-gray-500"
+            className="bg-black text-white py-3 px-6 rounded-md cursor-pointer hover:bg-gray-800 disabled:bg-gray-text"
           >
             {isSubmitting ? "Calculando..." : "Calcular"}
           </button>
@@ -76,7 +77,7 @@ export const CEPForm = () => {
 
       {addressError && (
         <div className="mt-4">
-          <p className="text-red-600 text-sm">{addressError}</p>
+          <p className="text-error text-sm">{addressError}</p>
         </div>
       )}
 
