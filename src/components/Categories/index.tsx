@@ -1,17 +1,10 @@
-import tenisBranco from "@/assets/images/tenis-branco.jpg";
-import tenisCinza from "@/assets/images/tenis-cinza.jpg";
-import tenisColorido from "@/assets/images/tenis-colorido.jpg";
-import tenisFuturista from "@/assets/images/tenis-futurista.jpg";
 import { Button } from "../Button";
-
-const categories = [
-  { name: "Casual", image: tenisBranco },
-  { name: "Esporte", image: tenisCinza },
-  { name: "Moderno", image: tenisColorido },
-  { name: "Futurista", image: tenisFuturista },
-];
+import { useRouter } from "@tanstack/react-router";
+import { categories } from "../../mocks/categories";
 
 export const Categories = () => {
+  const router = useRouter();
+
   return (
     <section className="container flex gap-2.5 lg:grid lg:grid-cols-4 lg:gap-4 mb-10 overflow-x-auto scrollbar-hide snap-x snap-mandatory ">
       {categories.map((category, index) => (
@@ -23,7 +16,17 @@ export const Categories = () => {
           <div className="absolute inset-0 bg-black/30"></div>
 
           <div className="relative">
-            <Button variant="secondary">{category.name}</Button>
+            <Button
+              variant="secondary"
+              onClick={() =>
+                router.navigate({
+                  to: "/products/category/$category",
+                  params: { category: category.name.toLowerCase() },
+                })
+              }
+            >
+              {category.name}
+            </Button>
           </div>
         </div>
       ))}

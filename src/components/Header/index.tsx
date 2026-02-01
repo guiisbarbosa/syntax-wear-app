@@ -29,7 +29,7 @@ export const Header = () => {
             <ul className="flex gap-10">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} preloadDelay={-1}>
+                  <Link to={link.href}>
                     {link.name}
                   </Link>
                 </li>

@@ -25,7 +25,7 @@ function RouteComponent() {
   const installments = originalPrice / 6;
 
   return (
-    <section className="container mb-10 pt-44 md:pt-54 pb-10 md:px-10">
+    <section className="container mb-10 pt-44 md:pt-54 pb-10 md:px-10 min-h-[60vh] flex flex-col item-center justify-center">
       <nav className="text-black text-sm mb-15 ml-5">
         <Link to="/">Home</Link> / <Link to="/products"> Produtos </Link> /{" "}
         <span className="font-semibold">

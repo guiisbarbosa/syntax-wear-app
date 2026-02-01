@@ -7,6 +7,7 @@ import galeriaTenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisBrancoPreto from "@/assets/images/galeria-tenis-branco-e-preto.jpg";
 import galeriaTenisCinza from "@/assets/images/galeria-tenis-cinza.jpg";
 import { Overlay } from "../Overlay";
+import { useRouter } from "@tanstack/react-router";
 
 export const Gallery = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -22,6 +23,8 @@ export const Gallery = () => {
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
+
+  const router = useRouter();
 
   return (
     <section className="w-full container">
@@ -73,8 +76,28 @@ export const Gallery = () => {
             subtitle="Estilo urbano com atitude"
             className=" inset-0 justify-center"
           >
-            <Button variant="secondary">Feminino</Button>
-            <Button variant="secondary">Masculino</Button>
+            <Button
+              variant="secondary"
+              onClick={() =>
+                router.navigate({
+                  to: "/products/category/$category",
+                  params: { category: "feminino" },
+                })
+              }
+            >
+              Feminino
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() =>
+                router.navigate({
+                  to: "/products/category/$category",
+                  params: { category: "masculino" },
+                })
+              }
+            >
+              Masculino
+            </Button>
           </Overlay>
         </div>
 
