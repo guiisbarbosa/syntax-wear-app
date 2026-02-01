@@ -7,6 +7,17 @@ import { CEPForm } from "../../../components/CEPForm";
 
 export const Route = createFileRoute("/_app/products/$productId")({
   component: RouteComponent,
+  head: ({ params }) => {
+    const filteredProduct = products.find(
+      (product) => product.id === Number(params.productId),
+    );
+
+    const title = filteredProduct
+      ? `${filteredProduct.name} - Produtos - SyntaxWear`
+      : "Produto não encontrado - Produtos - SyntaxWear";
+
+    return { meta: [{ title }] };
+  },
 });
 
 function RouteComponent() {
@@ -72,7 +83,10 @@ function RouteComponent() {
               <CEPForm />
             </div>
 
-            <button className="bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800" onClick={() => addToCart(filteredProduct)}>
+            <button
+              className="bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800"
+              onClick={() => addToCart(filteredProduct)}
+            >
               Adicionar ao carrinho
             </button>
           </div>
