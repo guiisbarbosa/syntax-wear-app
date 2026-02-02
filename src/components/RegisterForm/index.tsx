@@ -1,15 +1,14 @@
 import { useRegisterForm } from "./register-form.schema";
 
 export const RegisterForm = () => {
-  const { handleSubmit, register, errors, isSubmitting, setError, reset } =
-    useRegisterForm();
+  const { register, errors, isSubmitting } = useRegisterForm();
 
   return (
     <form className="text-black">
       <div>
         <label className="text-xs text-gray-600">Primeiro Nome*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.firstName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.firstName ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="text"
           {...register("firstName")}
         />
@@ -22,7 +21,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">Último Nome*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.lastName ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.lastName ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="text"
           {...register("lastName")}
         />
@@ -35,7 +34,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">E-mail*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.email ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="email"
           {...register("email")}
         />
@@ -48,7 +47,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">CPF*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.cpf ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.cpf ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="text"
           {...register("cpf")}
         />
@@ -61,7 +60,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">Data de Nascimento*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.birthDate ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.birthDate ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="date"
           {...register("birthDate")}
         />
@@ -74,7 +73,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">Celular*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.cellphone ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.cellphone ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="tel"
           {...register("cellphone")}
         />
@@ -87,7 +86,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">Senha*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.password ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.password ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="password"
           {...register("password")}
         />
@@ -100,7 +99,7 @@ export const RegisterForm = () => {
       <div>
         <label className="text-xs text-gray-600">Confirmar Senha*</label>
         <input
-          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.confirmPassword ? "border-error focus:ring-red-400" : "border-border focus:ring-accent"}`}
+          className={`w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${errors.confirmPassword ? "border-red-500 focus:ring-red-400" : "border-border focus:ring-accent"}`}
           type="password"
           {...register("confirmPassword")}
         />

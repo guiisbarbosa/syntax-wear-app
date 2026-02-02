@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import type { ProductCart } from "../../contexts/CartProvider";
 import { formatCurrency } from "../../utils/format-currency";
 
 interface CartDrawerProps {
@@ -33,7 +34,7 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
             </button>
           </header>
           <ul className="p-4 overflow-y-auto scrollbar-hide h-[calc(100%-140px)] flex flex-col gap-3">
-            {cart.map((product) => (
+            {cart.map((product: ProductCart) => (
               <li key={product.id} className="flex flex-col gap-1 pr-2">
                 <button
                   className="self-end text-xs cursor-pointer"
