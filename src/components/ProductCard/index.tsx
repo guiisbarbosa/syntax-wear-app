@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { Product } from "../../interfaces/product";
+import type { Product } from "../../interfaces/Product";
 import { MdAddShoppingCart } from "react-icons/md";
 import { CartContext } from "../../contexts/CartContext";
 import { useContext } from "react";

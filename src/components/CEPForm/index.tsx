@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCepForm } from "./cep-form.schema";
-import type { Adress } from "../../interfaces/adress";
+import type { Adress } from "../../interfaces/Adress";
 import { formatCurrency } from "../../utils/format-currency";
 
 const SHIPPING_BY_REGION: Record<string, number> = {

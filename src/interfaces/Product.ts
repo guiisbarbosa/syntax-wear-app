@@ -7,5 +7,5 @@ export interface Product {
   price: number;
   color: string;
   description: string;
-  category: Category
+  category: Category;
 }
